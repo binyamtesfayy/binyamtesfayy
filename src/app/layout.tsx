@@ -23,10 +23,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "[YOUR FULL NAME] — Software Engineer & Full-Stack Developer",
+  title: "Binyam Tesfay — Software Engineer & Full-Stack Developer",
   description:
-    "Portfolio of [YOUR FULL NAME], a Software Engineering graduate from Mekelle University. I build full-stack systems for education and finance — from mentorship platforms to enterprise budgeting tools.",
+    "Portfolio of Binyam Tesfay, a Software Engineering graduate from Mekelle University. I build full-stack systems for education and finance — from mentorship platforms to enterprise budgeting tools.",
   keywords: [
+    "Binyam Tesfay",
     "Software Engineer",
     "Full-Stack Developer",
     "Python",
@@ -37,20 +38,20 @@ export const metadata: Metadata = {
     "Flutter",
     "Mekelle University",
   ],
-  authors: [{ name: "[YOUR FULL NAME]" }],
-  creator: "[YOUR FULL NAME]",
+  authors: [{ name: "Binyam Tesfay", url: "https://github.com/binyamtesfayy" }],
+  creator: "Binyam Tesfay",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://[YOUR_DOMAIN]",
-    title: "[YOUR FULL NAME] — Software Engineer & Full-Stack Developer",
+    url: "https://binyamtesfayy.github.io",
+    title: "Binyam Tesfay — Software Engineer & Full-Stack Developer",
     description:
       "I build full-stack systems for education and finance — from mentorship platforms to enterprise budgeting tools.",
-    siteName: "[YOUR FULL NAME] Portfolio",
+    siteName: "Binyam Tesfay Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "[YOUR FULL NAME] — Software Engineer",
+    title: "Binyam Tesfay — Software Engineer",
     description:
       "I build full-stack systems for education and finance — from mentorship platforms to enterprise budgeting tools.",
   },

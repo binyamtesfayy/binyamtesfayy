@@ -1,11 +1,12 @@
 "use client";
 
-import { Mail, GitFork, Link2 } from "lucide-react";
+import { Mail, GitFork, Link2, Phone } from "lucide-react";
 
-// ─── PLACEHOLDERS — fill these in ──────────────
-const EMAIL        = "[YOUR_EMAIL]";
-const GITHUB_URL   = "[GITHUB_URL]";
-const LINKEDIN_URL = "[LINKEDIN_URL]";
+// ─── Contact & Profile Details ──────────────
+const EMAIL        = "binyamtesfay93@gmail.com";
+const PHONE        = "+251963491902";
+const GITHUB_URL   = "https://github.com/binyamtesfayy";
+const LINKEDIN_URL = "https://linkedin.com/in/binyamtesfayy";
 // ────────────────────────────────────────────────
 
 const CONTACT_LINKS = [
@@ -16,16 +17,22 @@ const CONTACT_LINKS = [
     display: EMAIL,
   },
   {
-    label: "GitHub",
-    href:  GITHUB_URL,
-    icon:  <GitFork size={20} />,
-    display: "github.com/[handle]",
+    label: "Phone",
+    href:  `tel:${PHONE}`,
+    icon:  <Phone size={20} />,
+    display: PHONE,
   },
   {
     label: "LinkedIn",
     href:  LINKEDIN_URL,
     icon:  <Link2 size={20} />,
-    display: "linkedin.com/in/[handle]",
+    display: "linkedin.com/in/binyamtesfayy",
+  },
+  {
+    label: "GitHub",
+    href:  GITHUB_URL,
+    icon:  <GitFork size={20} />,
+    display: "github.com/binyamtesfayy",
   },
 ];
 

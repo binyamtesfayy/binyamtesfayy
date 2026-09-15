@@ -97,7 +97,7 @@ export default function Navbar() {
               (e.currentTarget.style.color = "var(--off-white)")
             }
           >
-            YFN
+            BT
           </a>
 
           {/* Desktop links */}

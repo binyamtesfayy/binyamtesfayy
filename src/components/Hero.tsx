@@ -3,12 +3,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { GitFork, Link2, Mail, FileText, ArrowDownRight } from "lucide-react";
 
-// ─── PLACEHOLDERS — replace these before going live ──────
-const NAME        = "[YOUR FULL NAME]";
-const GITHUB_URL  = "[GITHUB_URL]";
-const LINKEDIN_URL = "[LINKEDIN_URL]";
-const EMAIL       = "[YOUR_EMAIL]";
-const RESUME_URL  = "[RESUME_PDF_URL]";
+// ─── Contact & Profile Details ──────
+const NAME         = "Binyam Tesfay";
+const GITHUB_URL   = "https://github.com/binyamtesfayy";
+const LINKEDIN_URL = "https://linkedin.com/in/binyamtesfayy";
+const EMAIL        = "binyamtesfay93@gmail.com";
+const RESUME_URL   = "#contact";
 // ─────────────────────────────────────────────────────────
 
 interface SocialLink {

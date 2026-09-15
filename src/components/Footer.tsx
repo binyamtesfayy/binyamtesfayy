@@ -2,11 +2,11 @@
 
 import { GitFork, Link2, Mail } from "lucide-react";
 
-// ─── PLACEHOLDERS ───────────────────────────────
-const NAME         = "[YOUR FULL NAME]";
-const EMAIL        = "[YOUR_EMAIL]";
-const GITHUB_URL   = "[GITHUB_URL]";
-const LINKEDIN_URL = "[LINKEDIN_URL]";
+// ─── Contact & Profile Details ───────────────────
+const NAME         = "Binyam Tesfay";
+const EMAIL        = "binyamtesfay93@gmail.com";
+const GITHUB_URL   = "https://github.com/binyamtesfayy";
+const LINKEDIN_URL = "https://linkedin.com/in/binyamtesfayy";
 const YEAR         = new Date().getFullYear();
 // ────────────────────────────────────────────────
 
