@@ -1,3 +1,5 @@
+"use client";
+
 import { GitFork, ExternalLink } from "lucide-react";
 
 interface Project {

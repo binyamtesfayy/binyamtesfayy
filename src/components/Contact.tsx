@@ -1,3 +1,5 @@
+"use client";
+
 import { Mail, GitFork, Link2 } from "lucide-react";
 
 // ─── PLACEHOLDERS — fill these in ──────────────

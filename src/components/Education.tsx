@@ -1,3 +1,5 @@
+"use client";
+
 export default function Education() {
   const stats = [
     { value: "3.93", label: "CGPA", sub: "out of 4.00" },
