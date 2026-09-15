@@ -6,19 +6,27 @@ interface SkillGroup {
 const SKILL_GROUPS: SkillGroup[] = [
   {
     category: "Backend",
-    skills: ["Python", "Django", "Node.js", "Express", "NestJS", "PHP", "Java"],
+    skills: ["Python", "Django", "Node.js", "Express", "NestJS", "FastAPI", "PHP", "Java"],
   },
   {
     category: "Frontend & Mobile",
-    skills: ["React", "Next.js", "Flutter"],
+    skills: ["React", "Next.js", "Flutter", "Dart", "React Native"],
   },
   {
-    category: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "SQLite"],
+    category: "Databases & Tools",
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Git & GitHub", "Docker"],
+  },
+  {
+    category: "IT & Systems Support",
+    skills: [
+      "IT Support & Troubleshooting",
+      "Hardware & Network Configuration",
+      "OS Administration",
+    ],
   },
   {
     category: "Languages spoken",
-    skills: ["Tigrigna (native)", "Amharic (native)", "English (professional)"],
+    skills: ["Tigrigna (native)", "Amharic (fluent)", "English (fluent)"],
   },
 ];
 

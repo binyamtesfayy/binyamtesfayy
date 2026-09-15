@@ -8,7 +8,7 @@ const NAME         = "Binyam Tesfay";
 const GITHUB_URL   = "https://github.com/binyamtesfayy";
 const LINKEDIN_URL = "https://linkedin.com/in/binyamtesfayy";
 const EMAIL        = "binyamtesfay93@gmail.com";
-const RESUME_URL   = "#contact";
+const RESUME_URL   = "/resume.pdf";
 // ─────────────────────────────────────────────────────────
 
 interface SocialLink {

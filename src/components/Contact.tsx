@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, GitFork, Link2, Phone } from "lucide-react";
+import { Mail, GitFork, Link2, Phone, FileText } from "lucide-react";
 
 // ─── Contact & Profile Details ──────────────
 const EMAIL        = "binyamtesfay93@gmail.com";
@@ -33,6 +33,12 @@ const CONTACT_LINKS = [
     href:  GITHUB_URL,
     icon:  <GitFork size={20} />,
     display: "github.com/binyamtesfayy",
+  },
+  {
+    label: "Resume",
+    href:  "/resume.pdf",
+    icon:  <FileText size={20} />,
+    display: "Download Resume (PDF)",
   },
 ];
 
