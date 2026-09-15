@@ -5,26 +5,26 @@ interface BulletPoint {
 }
 
 interface ExperienceEntry {
-  role:     string;
-  company:  string;
-  period:   string;
+  role: string;
+  company: string;
+  period: string;
   location: string;
-  context:  string;
-  bullets:  BulletPoint[];
+  context: string;
+  bullets: BulletPoint[];
 }
 
 const EXPERIENCE: ExperienceEntry[] = [
   {
-    role:     "Software Engineering Intern",
-    company:  "Alena Tech",
-    period:   "Mar 2025 – May 2025",
+    role: "Software Engineering Intern",
+    company: "Alena Tech",
+    period: "Mar 2025 – May 2025",
     location: "Ethiopia",
     context:
       "Worked on Menzo, a financial management system built for SACCOs (Savings and Credit Cooperatives).",
     bullets: [
-      { text: "[PLACEHOLDER — Describe a feature you built, e.g. 'Implemented the loan repayment tracking module using Django REST Framework, reducing manual reconciliation time by 40%.']" },
-      { text: "[PLACEHOLDER — Describe a problem you fixed or a part of the stack you owned, e.g. 'Owned the PostgreSQL schema for member account management and wrote migrations for three major schema changes.']" },
-      { text: "[PLACEHOLDER — Add a third bullet if you have one, or delete this entry.]" },
+      { text: "Assisted with data migration, data verification, and User Acceptance Testing (UAT) to help ensure system accuracy and reliability." },
+      { text: "Supported testing, troubleshooting, quality assurance, and documentation while working with developers, business analysts, and operational teams." },
+      { text: "Contributed to an AI chatbot project as an AI/NLP Logic & Analytics Developer, helping design intents for balance inquiries, loan repayments, savings balances, and transaction history using Rasa." },
     ],
   },
 ];
