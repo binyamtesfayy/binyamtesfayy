@@ -104,12 +104,11 @@ export default function Navbar() {
           <ul
             role="list"
             style={{
-              display: "flex",
               gap: "2rem",
               listStyle: "none",
               alignItems: "center",
             }}
-            className="hidden md:flex"
+            className="desktop-nav"
           >
             {NAV_LINKS.map(({ label, href }) => {
               const id = href.slice(1);
@@ -163,18 +162,21 @@ export default function Navbar() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden"
+            className="mobile-nav-btn"
             style={{
-              background: "none",
-              border: "none",
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "var(--radius-sm)",
               color: "var(--off-white)",
               cursor: "pointer",
-              padding: "0.5rem",
-              display: "flex",
+              padding: "0.6rem",
+              minWidth: "44px",
+              minHeight: "44px",
               alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
@@ -189,19 +191,19 @@ export default function Navbar() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "rgba(18, 23, 43, 0.97)",
-          backdropFilter: "blur(12px)",
+          backgroundColor: "rgba(18, 23, 43, 0.98)",
+          backdropFilter: "blur(16px)",
           zIndex: 40,
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start",
+          alignItems: "stretch",
           padding: "2rem 1.5rem",
-          gap: "0.25rem",
+          gap: "0.5rem",
           transform: menuOpen ? "translateX(0)" : "translateX(100%)",
           transition: "transform 280ms ease",
           pointerEvents: menuOpen ? "auto" : "none",
         }}
-        className="md:hidden"
+        className="mobile-nav-btn"
       >
         {NAV_LINKS.map(({ label, href }) => (
           <a
@@ -210,18 +212,23 @@ export default function Navbar() {
             onClick={closeMenu}
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.6rem",
+              fontSize: "1.5rem",
               fontWeight: 500,
               color: "var(--off-white)",
-              padding: "0.5rem 0",
-              transition: "color var(--transition-base)",
+              padding: "0.75rem 0",
+              borderBottom: "1px solid rgba(255,255,255,0.05)",
+              display: "flex",
+              alignItems: "center",
+              transition: "color var(--transition-base), padding-left var(--transition-base)",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--amber)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--off-white)")
-            }
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "var(--amber)";
+              e.currentTarget.style.paddingLeft = "0.5rem";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "var(--off-white)";
+              e.currentTarget.style.paddingLeft = "0";
+            }}
           >
             {label}
           </a>

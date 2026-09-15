@@ -57,10 +57,10 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
-        padding: "0 1.5rem 5rem",
+        padding: "0 1.25rem 4rem",
         maxWidth: "900px",
         margin: "0 auto",
-        paddingTop: "80px",
+        paddingTop: "90px",
       }}
     >
       <motion.div
@@ -78,7 +78,7 @@ export default function Hero() {
             fontWeight: 500,
             letterSpacing: "0.1em",
             color: "var(--emerald)",
-            marginBottom: "1.25rem",
+            marginBottom: "1rem",
             textTransform: "uppercase",
           }}
         >
@@ -94,7 +94,9 @@ export default function Hero() {
             color: "var(--off-white)",
             marginBottom: "0.5rem",
             letterSpacing: "-0.03em",
-            lineHeight: 1.05,
+            lineHeight: 1.08,
+            overflowWrap: "break-word",
+            wordBreak: "break-word",
           }}
         >
           {NAME}
@@ -105,11 +107,12 @@ export default function Hero() {
           variants={item}
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(1.25rem, 3vw, 2rem)",
+            fontSize: "clamp(1.15rem, 3.5vw, 1.85rem)",
             fontWeight: 300,
-            color: "rgba(242,244,245,0.55)",
-            marginBottom: "1.75rem",
+            color: "rgba(242,244,245,0.6)",
+            marginBottom: "1.5rem",
             letterSpacing: "-0.01em",
+            lineHeight: 1.3,
           }}
         >
           Software Engineer — Full-Stack Developer
@@ -119,11 +122,11 @@ export default function Hero() {
         <motion.p
           variants={item}
           style={{
-            fontSize: "1.05rem",
-            lineHeight: 1.65,
+            fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
+            lineHeight: 1.7,
             color: "rgba(242,244,245,0.75)",
             maxWidth: "56ch",
-            marginBottom: "3rem",
+            marginBottom: "2.5rem",
           }}
         >
           I build full-stack systems for education and finance — from
@@ -136,7 +139,7 @@ export default function Hero() {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: "0.75rem",
+            gap: "0.6rem",
           }}
           role="list"
           aria-label="Contact and profile links"
@@ -150,28 +153,20 @@ export default function Hero() {
                 target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 role="listitem"
+                className="hero-btn"
                 aria-label={
                   label === "Resume"
                     ? "Download resume PDF"
                     : `Visit ${label} profile`
                 }
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.45rem",
-                  padding: isResume ? "0.55rem 1.1rem" : "0.55rem 1rem",
-                  borderRadius: "var(--radius-sm)",
+                  padding: isResume ? "0.65rem 1.25rem" : "0.65rem 1rem",
                   border: isResume
                     ? "1px solid var(--amber)"
                     : "1px solid rgba(255,255,255,0.12)",
-                  background: isResume ? "var(--amber)" : "transparent",
-                  color: isResume ? "var(--navy)" : "rgba(242,244,245,0.7)",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.85rem",
-                  fontWeight: 500,
-                  transition:
-                    "background var(--transition-base), border-color var(--transition-base), color var(--transition-base), transform var(--transition-base)",
-                  cursor: "pointer",
+                  background: isResume ? "var(--amber)" : "rgba(255,255,255,0.03)",
+                  color: isResume ? "var(--navy)" : "rgba(242,244,245,0.8)",
+                  fontWeight: isResume ? 600 : 500,
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;

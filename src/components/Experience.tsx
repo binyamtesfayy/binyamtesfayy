@@ -120,11 +120,12 @@ export default function Experience() {
 
             {/* Context paragraph */}
             <p
+              className="exp-indent"
               style={{
                 fontSize: "0.92rem",
-                color: "rgba(242,244,245,0.6)",
-                marginLeft: "2.85rem",
+                color: "rgba(242,244,245,0.65)",
                 maxWidth: "none",
+                lineHeight: 1.7,
               }}
             >
               {entry.context}
@@ -132,10 +133,10 @@ export default function Experience() {
 
             {/* Bullets */}
             <ul
+              className="exp-indent"
               aria-label={`Responsibilities at ${entry.company}`}
               style={{
-                marginLeft: "2.85rem",
-                paddingLeft: "1.1rem",
+                paddingLeft: "1.2rem",
                 display: "flex",
                 flexDirection: "column",
                 gap: "0.5rem",

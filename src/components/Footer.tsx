@@ -1,6 +1,6 @@
 "use client";
 
-import { GitFork, Link2, Mail } from "lucide-react";
+import { GitFork, Link2, Mail, FileText } from "lucide-react";
 
 // ─── Contact & Profile Details ───────────────────
 const NAME         = "Binyam Tesfay";
@@ -16,23 +16,23 @@ export default function Footer() {
       role="contentinfo"
       style={{
         borderTop: "1px solid rgba(255,255,255,0.06)",
-        padding: "2.5rem 1.5rem",
+        padding: "2.5rem 1.25rem",
         maxWidth: "900px",
         margin: "0 auto",
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "space-between",
-        gap: "1rem",
+        gap: "1.25rem",
       }}
     >
       <p
         style={{
           fontSize: "0.82rem",
-          color: "rgba(242,244,245,0.35)",
+          color: "rgba(242,244,245,0.4)",
         }}
       >
-        © {YEAR} {NAME}. Built with Next.js.
+        © {YEAR} {NAME}. Built with Next.js & React.
       </p>
 
       <nav aria-label="Footer social links">
@@ -40,14 +40,17 @@ export default function Footer() {
           role="list"
           style={{
             display: "flex",
-            gap: "1.25rem",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "1rem",
             listStyle: "none",
           }}
         >
           {[
-            { label: "GitHub",   href: GITHUB_URL,          icon: <GitFork   size={16} /> },
-            { label: "LinkedIn", href: LINKEDIN_URL,        icon: <Link2 size={16} /> },
-            { label: "Email",    href: `mailto:${EMAIL}`,   icon: <Mail     size={16} /> },
+            { label: "GitHub",   href: GITHUB_URL,          icon: <GitFork  size={18} /> },
+            { label: "LinkedIn", href: LINKEDIN_URL,        icon: <Link2    size={18} /> },
+            { label: "Email",    href: `mailto:${EMAIL}`,   icon: <Mail     size={18} /> },
+            { label: "Resume",   href: "/resume.pdf",       icon: <FileText size={18} /> },
           ].map(({ label, href, icon }) => (
             <li key={label}>
               <a
@@ -56,17 +59,24 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={label}
                 style={{
-                  color: "rgba(242,244,245,0.35)",
+                  color: "rgba(242,244,245,0.45)",
                   transition: "color var(--transition-base)",
-                  display: "block",
-                  padding: "0.25rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minWidth: "40px",
+                  minHeight: "40px",
+                  borderRadius: "var(--radius-sm)",
+                  background: "rgba(255,255,255,0.03)",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "var(--amber)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "rgba(242,244,245,0.35)")
-                }
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "var(--amber)";
+                  e.currentTarget.style.background = "rgba(201,154,60,0.08)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "rgba(242,244,245,0.45)";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.03)";
+                }}
               >
                 {icon}
               </a>

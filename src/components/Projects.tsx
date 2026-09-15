@@ -53,8 +53,8 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <article
+      className="project-card"
       style={{
-        padding: "2rem",
         border: "1px solid rgba(255,255,255,0.08)",
         borderRadius: "var(--radius-lg)",
         background: "rgba(255,255,255,0.02)",
@@ -81,9 +81,10 @@ function ProjectCard({ project }: { project: Project }) {
       <div
         style={{
           display: "flex",
-          alignItems: "flex-start",
+          alignItems: "center",
           justifyContent: "space-between",
-          gap: "1rem",
+          flexWrap: "wrap",
+          gap: "0.75rem",
         }}
       >
         <h3

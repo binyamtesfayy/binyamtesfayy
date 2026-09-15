@@ -77,38 +77,30 @@ export default function Contact() {
             <li key={label} role="listitem">
               <a
                 href={isPlaceholder ? undefined : href}
-                target={href.startsWith("mailto") ? undefined : "_blank"}
+                target={href.startsWith("mailto") || href.startsWith("tel") ? undefined : "_blank"}
                 rel="noopener noreferrer"
+                className="contact-card"
                 aria-label={`Contact via ${label}: ${display}`}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.85rem",
-                  color: isPlaceholder
-                    ? "rgba(242,244,245,0.3)"
-                    : "rgba(242,244,245,0.7)",
-                  cursor: isPlaceholder ? "default" : "pointer",
-                  transition: "color var(--transition-base)",
-                  textDecoration: "none",
-                }}
-                onMouseEnter={(e) => {
-                  if (!isPlaceholder)
-                    (e.currentTarget as HTMLAnchorElement).style.color =
-                      "var(--amber)";
-                }}
-                onMouseLeave={(e) => {
-                  if (!isPlaceholder)
-                    (e.currentTarget as HTMLAnchorElement).style.color =
-                      "rgba(242,244,245,0.7)";
-                }}
               >
                 <span
                   aria-hidden="true"
-                  style={{ flexShrink: 0 }}
+                  style={{
+                    flexShrink: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "2.25rem",
+                    height: "2.25rem",
+                    borderRadius: "var(--radius-sm)",
+                    background: "rgba(31,111,84,0.12)",
+                    color: "var(--emerald)",
+                  }}
                 >
                   {icon}
                 </span>
-                <span style={{ fontSize: "0.95rem" }}>{display}</span>
+                <span style={{ fontSize: "0.95rem", fontWeight: 500 }}>
+                  {display}
+                </span>
               </a>
             </li>
           );

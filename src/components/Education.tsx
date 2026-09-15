@@ -46,11 +46,7 @@ export default function Education() {
       <div
         role="list"
         aria-label="Academic achievements"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          gap: "1rem",
-        }}
+        className="stats-grid"
       >
         {stats.map(({ value, label, sub }) => (
           <div
