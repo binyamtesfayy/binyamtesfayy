@@ -89,7 +89,7 @@ export default function Experience() {
                 <h3
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "1.1rem",
+                    fontSize: "clamp(1.05rem, 3.2vw, 1.15rem)",
                     fontWeight: 600,
                     color: "var(--off-white)",
                     marginBottom: "0.15rem",
@@ -125,7 +125,7 @@ export default function Experience() {
                 fontSize: "0.92rem",
                 color: "rgba(242,244,245,0.65)",
                 maxWidth: "none",
-                lineHeight: 1.7,
+                lineHeight: 1.65,
               }}
             >
               {entry.context}
@@ -136,7 +136,7 @@ export default function Experience() {
               className="exp-indent"
               aria-label={`Responsibilities at ${entry.company}`}
               style={{
-                paddingLeft: "1.2rem",
+                paddingLeft: "1.1rem",
                 display: "flex",
                 flexDirection: "column",
                 gap: "0.5rem",

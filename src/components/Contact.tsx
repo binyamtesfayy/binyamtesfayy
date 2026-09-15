@@ -98,7 +98,7 @@ export default function Contact() {
                 >
                   {icon}
                 </span>
-                <span style={{ fontSize: "0.95rem", fontWeight: 500 }}>
+                <span style={{ fontSize: "clamp(0.82rem, 3.2vw, 0.95rem)", fontWeight: 500, overflowWrap: "anywhere", wordBreak: "break-word" }}>
                   {display}
                 </span>
               </a>

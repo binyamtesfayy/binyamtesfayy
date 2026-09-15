@@ -53,11 +53,11 @@ export default function Hero() {
       id="hero"
       aria-label="Introduction"
       style={{
-        minHeight: "100svh",
+        minHeight: "calc(100svh - 60px)",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-end",
-        padding: "0 1.25rem 4rem",
+        justifyContent: "center",
+        padding: "5rem 1rem 3rem",
         maxWidth: "900px",
         margin: "0 auto",
         paddingTop: "90px",
@@ -78,7 +78,7 @@ export default function Hero() {
             fontWeight: 500,
             letterSpacing: "0.1em",
             color: "var(--emerald)",
-            marginBottom: "1rem",
+            marginBottom: "0.85rem",
             textTransform: "uppercase",
           }}
         >
@@ -107,10 +107,10 @@ export default function Hero() {
           variants={item}
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(1.15rem, 3.5vw, 1.85rem)",
+            fontSize: "clamp(1.1rem, 3.5vw, 1.85rem)",
             fontWeight: 300,
             color: "rgba(242,244,245,0.6)",
-            marginBottom: "1.5rem",
+            marginBottom: "1.25rem",
             letterSpacing: "-0.01em",
             lineHeight: 1.3,
           }}
@@ -122,11 +122,11 @@ export default function Hero() {
         <motion.p
           variants={item}
           style={{
-            fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
+            fontSize: "clamp(0.92rem, 2.2vw, 1.05rem)",
             lineHeight: 1.7,
             color: "rgba(242,244,245,0.75)",
             maxWidth: "56ch",
-            marginBottom: "2.5rem",
+            marginBottom: "2rem",
           }}
         >
           I build full-stack systems for education and finance — from
@@ -136,6 +136,7 @@ export default function Hero() {
         {/* Social links */}
         <motion.div
           variants={item}
+          className="hero-buttons-container"
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -168,28 +169,6 @@ export default function Hero() {
                   color: isResume ? "var(--navy)" : "rgba(242,244,245,0.8)",
                   fontWeight: isResume ? 600 : 500,
                 }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  if (isResume) {
-                    el.style.background = "var(--amber-dim)";
-                    el.style.borderColor = "var(--amber-dim)";
-                  } else {
-                    el.style.borderColor = "var(--amber)";
-                    el.style.color = "var(--off-white)";
-                  }
-                  el.style.transform = "translateY(-1px)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  if (isResume) {
-                    el.style.background = "var(--amber)";
-                    el.style.borderColor = "var(--amber)";
-                  } else {
-                    el.style.borderColor = "rgba(255,255,255,0.12)";
-                    el.style.color = "rgba(242,244,245,0.7)";
-                  }
-                  el.style.transform = "translateY(0)";
-                }}
               >
                 {icon}
                 {label}
@@ -202,7 +181,7 @@ export default function Hero() {
         <motion.div
           variants={item}
           style={{
-            marginTop: "5rem",
+            marginTop: "3.5rem",
             display: "flex",
             alignItems: "center",
             gap: "0.5rem",

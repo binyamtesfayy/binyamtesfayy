@@ -24,6 +24,27 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open & handle Escape key
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen]);
+
   // Active section via IntersectionObserver
   useEffect(() => {
     const sectionIds = NAV_LINKS.map((l) => l.href.slice(1));
@@ -57,11 +78,11 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 50,
-          backgroundColor: isScrolled
-            ? "rgba(18, 23, 43, 0.92)"
+          backgroundColor: isScrolled || menuOpen
+            ? "rgba(18, 23, 43, 0.95)"
             : "transparent",
-          backdropFilter: isScrolled ? "blur(10px)" : "none",
-          borderBottom: isScrolled
+          backdropFilter: isScrolled || menuOpen ? "blur(12px)" : "none",
+          borderBottom: isScrolled || menuOpen
             ? "1px solid rgba(255,255,255,0.06)"
             : "none",
           transition: "background-color 300ms ease, border-color 300ms ease",
@@ -71,7 +92,7 @@ export default function Navbar() {
           style={{
             maxWidth: "900px",
             margin: "0 auto",
-            padding: "0 1.5rem",
+            padding: "0 1.25rem",
             height: "60px",
             display: "flex",
             alignItems: "center",
@@ -82,6 +103,7 @@ export default function Navbar() {
           <a
             href="#hero"
             aria-label="Back to top"
+            onClick={closeMenu}
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "1.1rem",
@@ -89,13 +111,10 @@ export default function Navbar() {
               color: "var(--off-white)",
               letterSpacing: "-0.02em",
               transition: "color var(--transition-base)",
+              display: "inline-flex",
+              alignItems: "center",
+              minHeight: "44px",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--amber)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--off-white)")
-            }
           >
             BT
           </a>
@@ -126,14 +145,6 @@ export default function Navbar() {
                       paddingBottom: "2px",
                       transition: "color var(--transition-base)",
                     }}
-                    onMouseEnter={(e) =>
-                      !isActive &&
-                      (e.currentTarget.style.color = "var(--off-white)")
-                    }
-                    onMouseLeave={(e) =>
-                      !isActive &&
-                      (e.currentTarget.style.color = "rgba(242,244,245,0.65)")
-                    }
                   >
                     {label}
                     {isActive && (
@@ -158,7 +169,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen((v) => !v)}
@@ -197,43 +208,44 @@ export default function Navbar() {
           display: "flex",
           flexDirection: "column",
           alignItems: "stretch",
-          padding: "2rem 1.5rem",
+          padding: "1.5rem 1.5rem calc(2rem + env(safe-area-inset-bottom, 0px))",
           gap: "0.5rem",
+          overflowY: "auto",
+          WebkitOverflowScrolling: "touch",
           transform: menuOpen ? "translateX(0)" : "translateX(100%)",
           transition: "transform 280ms ease",
           pointerEvents: menuOpen ? "auto" : "none",
         }}
         className="mobile-nav-btn"
       >
-        {NAV_LINKS.map(({ label, href }) => (
-          <a
-            key={href}
-            href={href}
-            onClick={closeMenu}
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "1.5rem",
-              fontWeight: 500,
-              color: "var(--off-white)",
-              padding: "0.75rem 0",
-              borderBottom: "1px solid rgba(255,255,255,0.05)",
-              display: "flex",
-              alignItems: "center",
-              transition: "color var(--transition-base), padding-left var(--transition-base)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "var(--amber)";
-              e.currentTarget.style.paddingLeft = "0.5rem";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "var(--off-white)";
-              e.currentTarget.style.paddingLeft = "0";
-            }}
-          >
-            {label}
-          </a>
-        ))}
+        {NAV_LINKS.map(({ label, href }) => {
+          const id = href.slice(1);
+          const isActive = activeId === id;
+          return (
+            <a
+              key={href}
+              href={href}
+              onClick={closeMenu}
+              aria-current={isActive ? "true" : undefined}
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "1.35rem",
+                fontWeight: 500,
+                color: isActive ? "var(--amber)" : "var(--off-white)",
+                padding: "0.85rem 0",
+                borderBottom: "1px solid rgba(255,255,255,0.05)",
+                display: "flex",
+                alignItems: "center",
+                minHeight: "48px",
+                transition: "color var(--transition-base), padding-left var(--transition-base)",
+              }}
+            >
+              {label}
+            </a>
+          );
+        })}
       </div>
     </>
   );
 }
+

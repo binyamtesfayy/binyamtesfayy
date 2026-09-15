@@ -14,16 +14,12 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
+      className="footer-container"
       style={{
         borderTop: "1px solid rgba(255,255,255,0.06)",
         padding: "2.5rem 1.25rem",
         maxWidth: "900px",
         margin: "0 auto",
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: "1.25rem",
       }}
     >
       <p
@@ -41,8 +37,9 @@ export default function Footer() {
           style={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             flexWrap: "wrap",
-            gap: "1rem",
+            gap: "0.75rem",
             listStyle: "none",
           }}
         >
@@ -59,23 +56,15 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={label}
                 style={{
-                  color: "rgba(242,244,245,0.45)",
-                  transition: "color var(--transition-base)",
+                  color: "rgba(242,244,245,0.6)",
+                  transition: "color var(--transition-base), background var(--transition-base)",
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  minWidth: "40px",
-                  minHeight: "40px",
+                  minWidth: "44px",
+                  minHeight: "44px",
                   borderRadius: "var(--radius-sm)",
                   background: "rgba(255,255,255,0.03)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = "var(--amber)";
-                  e.currentTarget.style.background = "rgba(201,154,60,0.08)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = "rgba(242,244,245,0.45)";
-                  e.currentTarget.style.background = "rgba(255,255,255,0.03)";
                 }}
               >
                 {icon}
@@ -87,3 +76,4 @@ export default function Footer() {
     </footer>
   );
 }
+

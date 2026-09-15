@@ -81,10 +81,10 @@ function ProjectCard({ project }: { project: Project }) {
       <div
         style={{
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "space-between",
           flexWrap: "wrap",
-          gap: "0.75rem",
+          gap: "0.5rem",
         }}
       >
         <h3
@@ -92,13 +92,14 @@ function ProjectCard({ project }: { project: Project }) {
             fontFamily: "var(--font-display)",
             fontWeight: 600,
             color: "var(--off-white)",
-            fontSize: "1.15rem",
+            fontSize: "clamp(1.05rem, 3.2vw, 1.2rem)",
+            flex: "1 1 200px",
           }}
         >
           {project.title}
         </h3>
 
-        <div style={{ display: "flex", gap: "0.75rem", flexShrink: 0 }}>
+        <div style={{ display: "flex", gap: "0.5rem", flexShrink: 0, marginTop: "-0.25rem" }}>
           {project.github && !hasPlaceholderGithub && (
             <a
               href={project.github}
@@ -106,15 +107,16 @@ function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               aria-label={`View ${project.title} source on GitHub`}
               style={{
-                color: "rgba(242,244,245,0.4)",
-                transition: "color var(--transition-base)",
+                color: "rgba(242,244,245,0.6)",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: "44px",
+                minHeight: "44px",
+                borderRadius: "var(--radius-sm)",
+                background: "rgba(255,255,255,0.03)",
+                transition: "color var(--transition-base), background var(--transition-base)",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--off-white)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(242,244,245,0.4)")
-              }
             >
               <GitFork size={18} aria-hidden="true" />
             </a>
@@ -126,15 +128,16 @@ function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               aria-label={`View live demo of ${project.title}`}
               style={{
-                color: "rgba(242,244,245,0.4)",
-                transition: "color var(--transition-base)",
+                color: "var(--amber)",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: "44px",
+                minHeight: "44px",
+                borderRadius: "var(--radius-sm)",
+                background: "rgba(201,154,60,0.08)",
+                transition: "color var(--transition-base), background var(--transition-base)",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--amber)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(242,244,245,0.4)")
-              }
             >
               <ExternalLink size={18} aria-hidden="true" />
             </a>
@@ -146,7 +149,7 @@ function ProjectCard({ project }: { project: Project }) {
       <p
         style={{
           fontSize: "0.92rem",
-          lineHeight: 1.7,
+          lineHeight: 1.65,
           color: "rgba(242,244,245,0.65)",
           maxWidth: "none",
         }}

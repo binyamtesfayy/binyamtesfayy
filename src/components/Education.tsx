@@ -20,11 +20,11 @@ export default function Education() {
       </h2>
 
       {/* Degree block */}
-      <div style={{ marginBottom: "3rem" }}>
+      <div style={{ marginBottom: "2.25rem" }}>
         <p
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "1.35rem",
+            fontSize: "clamp(1.15rem, 3.5vw, 1.35rem)",
             fontWeight: 500,
             color: "var(--off-white)",
             marginBottom: "0.35rem",
@@ -34,7 +34,7 @@ export default function Education() {
         </p>
         <p
           style={{
-            fontSize: "0.95rem",
+            fontSize: "0.92rem",
             color: "rgba(242,244,245,0.55)",
           }}
         >
@@ -53,7 +53,7 @@ export default function Education() {
             key={label}
             role="listitem"
             style={{
-              padding: "1.5rem 1.25rem",
+              padding: "1.25rem 1rem",
               border: "1px solid rgba(255,255,255,0.08)",
               borderRadius: "var(--radius-md)",
               background: "rgba(255,255,255,0.025)",
@@ -61,22 +61,12 @@ export default function Education() {
                 "border-color var(--transition-base), background var(--transition-base)",
               cursor: "default",
             }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLDivElement;
-              el.style.borderColor = "var(--amber)";
-              el.style.background = "rgba(201,154,60,0.05)";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLDivElement;
-              el.style.borderColor = "rgba(255,255,255,0.08)";
-              el.style.background = "rgba(255,255,255,0.025)";
-            }}
           >
             <p
               aria-label={`${label}: ${value}`}
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "2.2rem",
+                fontSize: "clamp(1.75rem, 6.5vw, 2.2rem)",
                 fontWeight: 600,
                 color: "var(--amber)",
                 lineHeight: 1,
@@ -109,3 +99,4 @@ export default function Education() {
     </section>
   );
 }
+
